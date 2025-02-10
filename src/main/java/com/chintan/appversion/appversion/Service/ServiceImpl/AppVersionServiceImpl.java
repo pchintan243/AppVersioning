@@ -6,6 +6,7 @@ import com.chintan.appversion.appversion.Repository.AppVersionRepository;
 import com.chintan.appversion.appversion.Service.AppVersionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
@@ -18,9 +19,13 @@ public class AppVersionServiceImpl implements AppVersionService {
     @Autowired
     private AppVersionRepository appVersionRepository;
 
+    @Value("${database.version}")
+    private String databaseVersion;
+
     @Override
     public AppVersionDto findLatestVersion() {
         AppVersion latestVersion = appVersionRepository.findLatestVersion();
+        String v = databaseVersion;
         if(ObjectUtils.isEmpty(latestVersion)) {
             return null;
         }
