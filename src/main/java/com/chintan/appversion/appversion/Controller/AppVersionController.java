@@ -33,4 +33,10 @@ public class AppVersionController {
         return new ResponseEntity<>(appVersionService.addVersion(appVersionDto, purpose), HttpStatus.OK);
     }
 
+
+    @GetMapping("/take")
+    public String getData() {
+        return "Take data123";
+    }
+
 }

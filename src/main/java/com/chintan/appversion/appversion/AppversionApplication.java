@@ -8,6 +8,7 @@ public class AppversionApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppversionApplication.class, args);
+		System.out.println("App Version Demo");
 	}
 
 }
