@@ -24,13 +24,13 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Build & Run with Docker Compose
-      run: docker-compose up --build -d
+      run: docker compose up --build -d
 
     - name: Wait for services to be ready
       run: sleep 30
 
     - name: Check logs
-      run: docker-compose logs
+      run: docker compose logs
 
     - name: Run Tests (optional)
       run: docker exec springboot-app mvn test
