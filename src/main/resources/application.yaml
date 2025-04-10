@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: appversion
+  datasource:
+    url: jdbc:mysql://localhost:3306/local?serverTimezone=UTC
+    username: root
+    password: 954572309492
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl:
+        auto: none # update
+
+
+database:
+  version: 1.0.0
