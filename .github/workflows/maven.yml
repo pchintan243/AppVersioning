@@ -34,3 +34,4 @@ jobs:
 
     - name: Run Tests (optional)
       run: docker exec springboot-app mvn test
+      
